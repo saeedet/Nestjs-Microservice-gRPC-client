@@ -2,10 +2,13 @@ syntax = "proto3";
 
 package hero;
 
+// Declare a service for each controller you have
 service HeroService {
+  // Declare an rpc for each method that is called via gRPC  
   rpc FindOne (HeroById) returns (Hero);
 }
 
+// Declare the types used above
 message HeroById {
   int32 id = 1;
 }
