@@ -1,14 +1,22 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
+import { GraphQLModule } from '@nestjs/graphql';
+import { MovieModule } from './movie/movie.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
+    GraphQLModule.forRoot({
+      //-- off in production
+      debug: true,
+      playground: true,
+      //---
+      autoSchemaFile: true,
+      cors: false,
+    }),
+    MovieModule,
   ],
-  controllers: [AppController],
-  providers: [],
 })
 export class AppModule {}
