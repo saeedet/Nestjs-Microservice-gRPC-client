@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
+import { AppController } from './app.controller';
 import { MovieModule } from './movie/movie.module';
 
 @Module({
@@ -18,5 +19,6 @@ import { MovieModule } from './movie/movie.module';
     }),
     MovieModule,
   ],
+  controllers: [AppController],
 })
 export class AppModule {}
