@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
-import { AppController } from './app.controller';
-import { MovieModule } from './movie/movie.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -17,8 +16,7 @@ import { MovieModule } from './movie/movie.module';
       autoSchemaFile: true,
       cors: false,
     }),
-    MovieModule,
+    UserModule,
   ],
-  controllers: [AppController],
 })
 export class AppModule {}

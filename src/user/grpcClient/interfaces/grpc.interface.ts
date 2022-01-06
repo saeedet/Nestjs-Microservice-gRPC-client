@@ -10,7 +10,9 @@ export interface Movie {
 export interface MovieName {
   name: string;
 }
-
-export interface GrpcMovieService {
+export interface Adad {
+  id: number;
+}
+export interface IGrpcService {
   findOne(data: MovieName): Observable<Movie>;
 }
